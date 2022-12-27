@@ -7,16 +7,12 @@ let secondPassword = ""
 let passwordLength = 15
 function setSettings() {
     passwordLength = document.getElementById("password-length").value
-    if (passwordLength >= 1) {
-    if (passwordLength <= 99) {
-    passwordLength = document.getElementById("password-length").value
-    console.log("number of characters:" + passwordLength)
-    errorMessage.textContent = ""
+    if (passwordLength >= 1 && passwordLength <= 100) {
+        passwordLength = document.getElementById("password-length").value
+        console.log("number of characters:" + passwordLength)
+        errorMessage.textContent = ""
     } else {
-        errorMessage.textContent = "Number of characters exceeded (should be below 100 characters)"
-    }
-    } else {
-        errorMessage.textContent = "Number too low"
+        errorMessage.textContent = "Password length should only be 1-99 characters long"
     }
     
 }
